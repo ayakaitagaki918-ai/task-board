@@ -1,9 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
-  const [tasks, setTasks] = useState([])
+  // ローカルストレージから初期値を読み込む
+  const [tasks, setTasks] = useState(() => {
+    const saved = localStorage.getItem('tasks')
+    return saved ? JSON.parse(saved) : []
+  })
   const [inputValue, setInputValue] = useState('')
+
+  // タスクが変わるたびにローカルストレージに保存する
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
 
   // タスクを追加する
   const addTask = () => {
