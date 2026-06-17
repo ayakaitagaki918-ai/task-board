@@ -22,5 +22,8 @@
 - プッシュ前に `git status` で変更内容を確認する
 - 手順：`git add .` → `git commit -m "変更内容"` → `git push`
 
+## GitHubリポジトリ
+https://github.com/ayakaitagaki918-ai/task-board
+
 ## 返答ルール
 - 返答は必ず日本語で行う
